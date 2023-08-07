@@ -1,3 +1,4 @@
 Juan David Casallas Pava
 
-print("Hello World")
+print("Hi World")
+print(2+1-2)
