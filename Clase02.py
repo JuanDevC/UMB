@@ -11,7 +11,7 @@ def token_required(f):
     def validate(*args, **kwargs):
         #export API_PKEY=mytoken
         token = request.headers['token']
-        if token == app.config['SECRET_KEY']:
+        if token == app.config['SECRET_KEY']: #DevJ12
             return f(*args, **kwargs)
         else:
             return jsonify({"message":"token is invalid"}), 403    
