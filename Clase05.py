@@ -10,16 +10,16 @@ app = Flask(__name__)
 
 def products_select(category = ""):
     mydb = mysql.connector.connect(
-        host="",
-        user="",
-        password="",
-        database="",
-        port=0
+        host="containers-us-west-101.railway.app",
+        user="root",
+        password="6G74WClR1fVadVdFKqFX",
+        database="railway",
+        port=7171
     )
 
 
     mycursor = mydb.cursor()
-    sql = ''
+    sql = 'select * from products where category = "'+category+'"AND released = 0'
     mycursor.execute(sql)
     myresult = mycursor.fetchall()
     return myresult
