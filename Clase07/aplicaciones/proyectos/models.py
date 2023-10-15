@@ -6,3 +6,11 @@ class Proyecto(models.Model):
     nombre = models.CharField(max_length=90)
     descripcion = models.CharField( max_length=2000 )
     publish = models.BooleanField(default=True)
+    
+def __str__(self)-> str:
+    texto = "[{1}] {0}"
+    if self.publish:
+        tp = "On"
+    else:
+        tp = "Off"    
+    return texto.format(self.nombre,tp)
