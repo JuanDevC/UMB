@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import inicio, resumen
+from django.urls import re_path
+from django.views.static import serve
+from django.conf import settings
 
 
 urlpatterns = [
@@ -24,5 +27,7 @@ urlpatterns = [
     path("inicio/", inicio, name="inicio"),
     path("resumen/", resumen, name="resumen"),
     path("", include('aplicaciones.proyectos.urls')),
+    path("", include('aplicaciones.contacto.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 
 ]

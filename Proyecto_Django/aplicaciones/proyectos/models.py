@@ -6,9 +6,11 @@ class Proyecto(models.Model):
     nombre = models.CharField(max_length=90)
     descripcion = models.CharField( max_length=2000 )
     publish = models.BooleanField(default=True)
-    
-def __str__(self)-> str:
-    texto = "[{1}] {0}"
+    date = models.DateTimeField(auto_now=True)
+    imageproj = models.FileField(upload_to='proyectos/', null=True,)
+
+def __str__(self):
+    texto = "[{0}] {1}"
     if self.publish:
         tp = "On"
     else:
