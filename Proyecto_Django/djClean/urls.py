@@ -26,8 +26,9 @@ urlpatterns = [
     path("", inicio),
     path("inicio/", inicio, name="inicio"),
     path("resumen/", resumen, name="resumen"),
+    path("accounts/", include('django.contrib.auth.urls')), 
     path("", include('aplicaciones.proyectos.urls')),
     path("", include('aplicaciones.contacto.urls')),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
-
+    path("", include('aplicaciones.ubicaciones.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]

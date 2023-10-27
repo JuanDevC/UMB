@@ -11557,7 +11557,7 @@ html {
 
 .bg-gradient-primary-to-secondary {
   background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(135deg, #252525 0%, #e21e80 100%);
 }
 
 .text-gradient {
@@ -11612,7 +11612,7 @@ html {
   top: 6.05vw;
 }
 .profile .dots-2 svg {
-  fill: #1e30f3;
+  fill: #000;
 }
 .profile .dots-3 {
   position: absolute;
@@ -11630,7 +11630,7 @@ html {
   bottom: 4vw;
 }
 .profile .dots-4 svg {
-  fill: #1e30f3;
+  fill: #000;
 }
 
 @media (min-width: 576px) {

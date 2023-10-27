@@ -18,17 +18,23 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
+## Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ivp-%6s$7tqh@uj&_&1$u($!+4g^i-t(uf7)1)5t9&k58xjvv3'
+SECRET_KEY = "django-insecure-rx_q0dl58a=_)6^7#auv3@3c_)stap*rxuqvxspr&)^*^$&%7a"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'   
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'davidcasallas1202@gmail.com'
+EMAIL_HOST_PASSWORD = 'wsqj mhlz snys osyj'
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -40,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aplicaciones.proyectos',
-    'aplicaciones.contacto'
+    'aplicaciones.contacto',
+    'aplicaciones.ubicaciones',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +138,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'inicio'
+LOGOUT_REDIRECT_URL = 'inicio'
