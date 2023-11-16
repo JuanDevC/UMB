@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'aplicaciones.contacto',
     'aplicaciones.ubicaciones',
     'aplicaciones.directorio',
+    'aplicaciones.cursos',
 ]
 
 MIDDLEWARE = [

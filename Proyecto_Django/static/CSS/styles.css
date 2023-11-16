@@ -11736,3 +11736,61 @@ html {
     left: -2vw;
   }
 }
+.styled-image {/*IMAGERN*/
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    margin: 10px; /* Esto agrega un margen de 10px alrededor de la imagen */
+}
+
+/* Estilo para los subtítulos */
+.subtitles-style {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Color por defecto del texto */
+    /* Otros estilos que desees aplicar */
+}
+
+/* Estilo para el degradado en los subtítulos */
+.subtitles-style::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #2659BF, #FFC0CB); /* Cambia estos colores al degradado que desees */
+    border-radius: 10px;
+}
+
+/*Texto despues de plataforma,fecha y dificultad*/
+.subtext-style {
+  /* Estilos para el texto después de los subtítulos */
+  color: #666;
+  font-style: italic;
+  margin-left: 10px; /* Añade un margen a la izquierda para separar el texto del subtítulo */
+  display: inline-block; /* Permite que el texto se alinee verticalmente */
+  position: relative;
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+}
+
+.subtext-style::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Mueve la línea debajo del texto */
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #2659BF, #FFC0CB); /* degradado */
+  border-radius: 2px;
+  transform: scaleX(0); /* Inicialmente, la línea está oculta */
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+}
+
+.subtext-style:hover::before {
+  transform: scaleX(1); /* Muestra la línea cuando pasas el cursor sobre el texto */
+}
+
+

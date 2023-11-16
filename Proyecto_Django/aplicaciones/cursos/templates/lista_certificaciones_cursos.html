@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Lista de Certificaciones y Cursos{% endblock %}
+
+{% block content %}
+<main class="flex-shrink-0">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Lista de Certificaciones y Cursos</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                {% for certificacion_curso in certificaciones_cursos %}
+                    <div class="card shadow border-0 rounded-4 mb-5">
+                        <div class="card-body p-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2 class="display-6 fw-bolder mb-0"><span class="text-gradient d-inline">{{ certificacion_curso.titulo }}</span></h2>
+                                    <p><span class="subtitles-style">{{"Plataforma:"}}</span> <span class="subtext-style">{{ certificacion_curso.plataforma }}</span></p>
+                                    <p><span class="subtitles-style">{{"Fecha de realización:"}}</span> <span class="subtext-style">{{ certificacion_curso.fecha_realizacion }}</span></p>
+                                    <p><span class="subtitles-style">{{"Dificultad:"}}</span> <span class="subtext-style">{{ certificacion_curso.dificultad }}</span></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="{{ certificacion_curso.imagen.url }}" alt="{{ certificacion_curso.titulo }}" class="styled-image" style="max-width: 100%; max-height: 300px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

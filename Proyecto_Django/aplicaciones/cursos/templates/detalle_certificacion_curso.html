@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de Certificación o Curso</title>
+</head>
+<body>
+    <h1>Detalles de Certificación o Curso</h1>
+    <h2>{{ certificacion_curso.titulo }}</h2>
+    <img src="{{ certificacion_curso.imagen.url }}" alt="Imagen de {{ certificacion_curso.titulo }}">
+    <p>Plataforma: {{ certificacion_curso.plataforma }}</p>
+    <p>Fecha de realización: {{ certificacion_curso.fecha_realizacion }}</p>
+    <p>Dificultad: {{ certificacion_curso.dificultad }}</p>
+    <!-- Otros detalles específicos si los tienes -->
+</body>
+</html>

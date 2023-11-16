@@ -20,6 +20,9 @@ from django.urls import re_path
 from django.views.static import serve
 from django.conf import settings
 from rest_framework.documentation import include_docs_urls
+from . import views
+from aplicaciones.cursos import views as cursos_views
+from aplicaciones.cursos.views import lista_certificaciones_cursos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,5 +35,7 @@ urlpatterns = [
     path("", include('aplicaciones.ubicaciones.urls')),
     path("api/v1/", include('aplicaciones.directorio.urls')),
     path("docs/", include_docs_urls(title='Api Documentation')),  
+    path('cursos/', include('aplicaciones.cursos.urls')), 
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    
 ]
