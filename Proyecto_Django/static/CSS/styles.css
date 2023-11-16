@@ -601,6 +601,8 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  width: 40%;
+  
 }
 
 .img-thumbnail {
@@ -8115,6 +8117,7 @@ textarea.form-control-lg {
 
 .fw-bolder {
   font-weight: bolder !important;
+
 }
 
 .lh-1 {

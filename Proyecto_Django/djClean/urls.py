@@ -19,7 +19,7 @@ from .views import inicio, resumen
 from django.urls import re_path
 from django.views.static import serve
 from django.conf import settings
-
+from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +30,7 @@ urlpatterns = [
     path("", include('aplicaciones.proyectos.urls')),
     path("", include('aplicaciones.contacto.urls')),
     path("", include('aplicaciones.ubicaciones.urls')),
+    path("api/v1/", include('aplicaciones.directorio.urls')),
+    path("docs/", include_docs_urls(title='Api Documentation')),  
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
