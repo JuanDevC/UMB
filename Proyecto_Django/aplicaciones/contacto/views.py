@@ -19,9 +19,9 @@ def contacto(request):
 
     return render(request,"pages/contacto.html",)
 
-def email(email):
-    subject = 'Thank you for contact me'
-    message = ' it  means a world to us '
+def email(contacto):
+    subject = 'Contacto de Web'
+    message = f' Nombre: {contacto.name}\nEmail: {contacto.email}\nTeléfono: {contacto.phone}\nMensaje: {contacto.message}'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = ['davidcasallas1202@gmail.com',]
     send_mail( subject, message, email_from, recipient_list )
